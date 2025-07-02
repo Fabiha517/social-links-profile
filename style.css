@@ -1,0 +1,271 @@
+/* ======================
+   Global Reset & Setup
+====================== */
+* {
+	padding: 0;
+	margin: 0;
+	box-sizing: border-box;
+	font-family: "Inter";
+	color: hsl(0, 0%, 100%);
+}
+/* Use border-box for consistent sizing */
+html {
+	box-sizing: border-box;
+}
+*,
+*::before,
+*::after {
+	box-sizing: inherit;
+}
+/* =========================
+   Wrapper and Container
+========================= */
+.Container_Wrapper {
+	background-color: hsl(0, 0%, 8%);
+	width: 100%;
+	min-height: 100vh;
+	padding: 3.5rem 1.4rem 6.5rem 1.4rem;
+}
+/* Inner profile container */
+.container {
+	background-color: hsl(0, 0%, 12%);
+	height: 100%;
+	width: 100%;
+	border-radius: 0.7rem;
+	padding: 1.3rem;
+
+	margin: 0 auto;
+}
+
+/* =========================
+   Profile & Content Styling
+========================= */
+
+/* Profile Image */
+.profile-image {
+	height: 5rem;
+	width: 5rem;
+	border-radius: 50%;
+	margin-bottom: 1.5rem;
+}
+
+/* Center the image */
+.imageContainer {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+/* Name */
+h2 {
+	text-align: center;
+	font-weight: 500;
+	margin-bottom: 0.5rem;
+}
+/* Location */
+.location {
+	text-align: center;
+	color: hsl(75, 94%, 57%);
+	font-size: 0.8rem;
+	margin-bottom: 1.5rem;
+	font-weight: 600;
+}
+/* Bio */
+.bio {
+	color: hsl(0, 11%, 81%);
+	text-align: center;
+	font-weight: lighter;
+	font-size: 0.8rem;
+	margin-bottom: 1rem;
+}
+/* Social Links */
+.social-links li {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	list-style-type: none;
+	margin-bottom: 0.8rem;
+	font-size: 0.8rem;
+	font-weight: 600;
+	background-color: hsl(0, 0%, 20%);
+	height: 2.5rem;
+	border-radius: 0.5rem;
+	margin-bottom: 0.8rem;
+	border: none; /* Ensure there's no border */
+	box-shadow: none; /* Remove accidental shadows */
+	outline: none; /* In case outline is showing on focus */
+	transition: background-color 0.3s ease-in-out;
+}
+/* made the anchor tag fill the li to manage hover state */
+.social-links li a {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	width: 100%;
+	height: 100%;
+	color: hsl(0, 0%, 100%);
+	text-decoration: none;
+	font-size: 0.9rem;
+	font-weight: 600;
+	transition: color 0.3s ease;
+}
+.social-links li a:hover {
+	color: hsl(0, 0%, 8%);
+}
+.social-links li:hover {
+	background-color: hsl(75, 94%, 57%);
+	transition: all 0.3s ease-in-out;
+	cursor: pointer;
+}
+.social-links li a:focus-visible {
+   box-shadow: 0 0 0 3px hsl(75, 94%, 57%); /* Add a focus ring */
+  outline: none;
+  outline-offset: 2px; /* Add some space between the outline and the element(text) */
+  border-radius: 0.5rem; /* Match the border radius of the li */
+}
+/* ========================
+        Media Queries
+========================= */
+
+/* ============================
+   Responsive: Tablets & Up
+============================ */
+@media (min-width: 768px) {
+	.Container_Wrapper {
+		padding: 2rem 1rem 6rem;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		min-height: 100vh;
+	}
+	.container {
+		padding: 1.5rem;
+		border-radius: 0.8rem;
+		max-width: 500px;
+	}
+	.profile-image {
+		margin-top: 2rem;
+		height: 10rem;
+		width: 10rem;
+		border-radius: 50%;
+	}
+	h2 {
+		font-weight: 700;
+		font-size: 2.5rem;
+	}
+	.location {
+		font-size: 1.2rem;
+	}
+	.bio {
+		font-size: 1.2rem;
+		margin-bottom: 2rem;
+	}
+	.social-links li {
+		height: 3.3rem;
+		margin-bottom: 1rem;
+		font-size: 1.5rem;
+	}
+}
+/* ============================
+   Responsive: Short Desktops
+   (e.g., Nest Hub Landscape)
+============================ */
+@media (min-width: 1024px) and (max-height: 700px) {
+	.Container_Wrapper {
+		padding: 3rem 1.5rem 4rem;
+	}
+	.container {
+		padding: 1rem 2rem;
+	}
+	.profile-image {
+		height: 9rem;
+		width: 9rem;
+		border-radius: 50%;
+		margin-top: 1rem;
+	}
+	h2 {
+		font-size: 2rem;
+	}
+	.location {
+		font-size: 1.2rem;
+	}
+	.bio {
+		font-size: 1rem;
+		margin: 1.5rem 0;
+	}
+	.social-links li {
+		height: 3.2rem;
+		font-size: 1rem;
+		margin-bottom: 1rem;
+	}
+}
+
+/* =====================================
+   Responsive: Standard Large Desktops
+   (1024px–1366px and tall screens)
+===================================== */
+@media (min-width: 1024px) and (max-width: 1366px) and (min-height: 701px) {
+	.Container_Wrapper {
+		padding: 4rem 2rem 6rem;
+	}
+
+	.container {
+		padding: 1rem 2rem;
+	}
+
+	.profile-image {
+		width: 10rem;
+		height: 10rem;
+	}
+
+	h2 {
+		font-size: 2.2rem;
+	}
+
+	.location,
+	.bio {
+		font-size: 1.3rem;
+	}
+
+	.bio {
+		margin-top: 2rem;
+		margin-bottom: 2rem;
+	}
+
+	.social-links li {
+		height: 3.8rem;
+		margin-bottom: 1rem;
+	}
+}
+/* ================================
+   Responsive: Extra Large Screens
+   (1440px and wider)
+=============================== */
+@media (min-width: 1440px) {
+	.Container_Wrapper {
+		min-height: 100vh;
+		padding: 10rem 20rem;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+	}
+	.container {
+		padding: 2.5rem;
+		max-width: clamp(400px, 40vw, 500px);
+	}
+	h2 {
+		font-size: 2rem;
+	}
+	.location {
+		font-size: 1.1rem;
+		padding-bottom: 1rem;
+	}
+	.bio {
+		font-size: 1rem;
+		margin-bottom: 1.5rem;
+	}
+	.social-links li {
+		height: 3rem;
+		margin-bottom: 1rem;
+		font-size: 1rem;
+	}
+}
